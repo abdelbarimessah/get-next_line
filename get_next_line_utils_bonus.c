@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/27 14:04:42 by amessah           #+#    #+#             */
-/*   Updated: 2021/12/06 15:58:06 by amessah          ###   ########.fr       */
+/*   Created: 2021/12/03 13:44:55 by amessah           #+#    #+#             */
+/*   Updated: 2021/12/06 19:59:07 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_bonus(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
@@ -25,7 +25,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	if (!s1 || !s2)
 		return (NULL);
-	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	str = malloc(ft_strlen_bonus(s1) + ft_strlen_bonus(s2) + 1);
 	if (str == NULL)
 		return (NULL);
 	i = -1;
@@ -35,12 +35,12 @@ char	*ft_strjoin(char *s1, char *s2)
 			str[i] = s1[i];
 	while (s2[j])
 		str[i++] = s2[j++];
-	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	str[ft_strlen_bonus(s1) + ft_strlen_bonus(s2)] = '\0';
 	free(s1);
 	return (str);
 }
 
-size_t	ft_strlen(const	char *s)
+size_t	ft_strlen_bonus(const	char *s)
 {
 	size_t	len;
 
@@ -52,7 +52,7 @@ size_t	ft_strlen(const	char *s)
 	return (len);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_bonus(const char *s, int c)
 {
 	char	c1;
 	char	*str;
@@ -62,7 +62,7 @@ char	*ft_strchr(const char *s, int c)
 	str = (char *)s;
 	i = 0;
 	if (c1 == '\0')
-		return (str + ft_strlen(str));
+		return (str + ft_strlen_bonus(str));
 	if (!s)
 		return (NULL);
 	while (str[i])
